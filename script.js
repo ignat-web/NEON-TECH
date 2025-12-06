@@ -1,4 +1,5 @@
 let cart = JSON.parse(localStorage.getItem('neonCart')) || [];
+document.getElementById('cart-count').textContent = cart.length;
 document.querySelectorAll('.by-card').forEach(button => {
     button.addEventListener('click', function () {
         const card = this.parentElement;
@@ -65,4 +66,5 @@ document.addEventListener('click', function (e) {
     if (!e.target.closest('.search-container') && !e.target.matches('.nav-right a')) {
         document.querySelector('.search-container').classList.remove('active');
     }
+
 });
